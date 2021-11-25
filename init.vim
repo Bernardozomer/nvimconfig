@@ -111,6 +111,8 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+" Automatic bracket pairing.
+Plug 'jiangmiao/auto-pairs'
 " Performance.
 Plug 'lewis6991/impatient.nvim'
 " Show VCS diffs.
