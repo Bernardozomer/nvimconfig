@@ -113,6 +113,8 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 " Automatic bracket pairing.
 Plug 'jiangmiao/auto-pairs'
+" Documentation generator.
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " Performance.
 Plug 'lewis6991/impatient.nvim'
 " Show VCS diffs.
