@@ -21,9 +21,6 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,WinLeave   * if &nu | set nornu | endif
 augroup END
 
-" Enable hidden buffers.
-set hidden
-
 " Make CursorHold autocommands faster.
 set updatetime=250
 
@@ -136,16 +133,13 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " Better syntax highlighting.
-" TODO: change to master branch once neovim 0.6 arrives.
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'branch': '0.5-compat' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 " Dependency for some color themes.
-" TODO: check if I still need this.
 Plug 'rktjmp/lush.nvim'
 " Dev icons.
 Plug 'ryanoasis/vim-devicons'
 " UI for native LSP.
-" TODO: change to master branch once neovim 0.6 arrives.
-Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' }
+Plug 'tami5/lspsaga.nvim'
 " Line commenting keybindings.
 Plug 'tpope/vim-commentary'
 " Git integration.
