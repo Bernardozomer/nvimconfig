@@ -279,6 +279,39 @@ end)
 
 END
 
+" = vim-startify =
+
+let g:startify_lists = [
+	\ { 'type': 'files',     'header': ['   Last Opened']            },
+	\ { 'type': 'dir',       'header': ['   Last Opened @ '. getcwd()] },
+	\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+	\ { 'type': 'commands',  'header': ['   Commands']       },
+	\ ]
+
+let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'} ]
+
+let g:startify_update_oldfiles = 1
+
+let g:startify_fortune_use_unicode = 1
+
+let g:header = [
+	\ '                                           ███                 ',
+	\ '                                          ░░░                  ',
+	\ ' ████████    ██████   ██████  █████ █████ ████  █████████████  ',
+	\ '░░███░░███  ███░░███ ███░░███░░███ ░░███ ░░███ ░░███░░███░░███ ',
+	\ ' ░███ ░███ ░███████ ░███ ░███ ░███  ░███  ░███  ░███ ░███ ░███ ',
+	\ ' ░███ ░███ ░███░░░  ░███ ░███ ░░███ ███   ░███  ░███ ░███ ░███ ',
+	\ ' ████ █████░░██████ ░░██████   ░░█████    █████ █████░███ █████',
+	\ '░░░░ ░░░░░  ░░░░░░   ░░░░░░     ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ ',
+	\	]
+
+let g:startify_custom_header =
+			\ 'startify#pad(g:header + startify#fortune#boxed())'
+
+let g:startify_relative_path = 1
+
+nnoremap <leader>ss <cmd>:Startify<cr>
+
 " = telescope =
 
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
