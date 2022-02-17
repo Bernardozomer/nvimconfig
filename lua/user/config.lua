@@ -11,6 +11,16 @@ vim.api.nvim_exec([[
 	false
 )
 
+-- Stay in insert mode inside the terminal and remove line numbers
+vim.api.nvim_exec([[
+		augroup terminal
+			autocmd TermOpen * :startinsert
+			autocmd TermOpen * :setlocal nonumber norelativenumber
+			autocmd BufWinEnter,WinEnter term://* startinsert
+	]],
+	false
+)
+
 -- Make CursorHold events trigger faster
 vim.opt.updatetime = 300
 
