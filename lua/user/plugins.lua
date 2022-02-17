@@ -80,6 +80,9 @@ require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
 
+	-- Comment toggler
+	use "terrortylor/nvim-comment"
+
 	-- Treesitter
 	use {
         'nvim-treesitter/nvim-treesitter',
@@ -164,6 +167,9 @@ require('indent_blankline').setup {
 
 -- lualine
 require('lualine').setup()
+
+-- nvim-comment
+require('nvim_comment').setup()
 
 -- telescope
 local telescope = require('telescope')

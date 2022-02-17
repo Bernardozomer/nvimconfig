@@ -69,7 +69,7 @@ keymap("v", "p", '"_dP', opts)
 -- Plugin: telescope
 keymap('n', '<leader>f', '<cmd>lua require(\'telescope.builtin\').find_files()<CR>', opts)
 keymap('n', '<leader>o', '<cmd>lua require(\'telescope.builtin\').oldfiles()<CR>', opts)
-keymap('n', '<leader>g', '<cmd>lua require(\'telescope.builtin\').live_grep()<CR>', opts)
+keymap('n', '<leader>lg', '<cmd>lua require(\'telescope.builtin\').live_grep()<CR>', opts)
 keymap('n', '<leader>b', '<cmd>lua require(\'telescope.builtin\').buffers()<CR>', opts)
 keymap('n', '<leader>cm', '<cmd>lua require(\'telescope.builtin\').commands()<CR>', opts)
 keymap('n', '<leader>k', '<cmd>lua require(\'telescope.builtin\').keymaps()<CR>', opts)
@@ -79,7 +79,7 @@ keymap('n', '<leader>ca', '<cmd>lua require(\'telescope.builtin\').lsp_code_acti
 keymap('n', 'gr', '<cmd>lua require(\'telescope.builtin\').lsp_references()<CR>', opts)
 keymap('n', '<leader>d', '<cmd>lua require(\'telescope.builtin\').diagnostics()<CR>', opts)
 
-keymap('n', 'Gb', '<cmd>lua require(\'telescope.builtin\').git_branches()<CR>', opts)
+keymap('n', '<leader>gb', '<cmd>lua require(\'telescope.builtin\').git_branches()<CR>', opts)
 
 keymap('n', '<leader>e', '<cmd>lua require(\'telescope\').extensions.emoji.emoji()<CR>', opts)
 keymap('n', '<leader>s', '<cmd>lua require(\'telescope\').extensions.file_browser.file_browser()<CR>', opts)
