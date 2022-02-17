@@ -21,8 +21,6 @@ if [ $ret -ne 0 ]; then
 	exit 1
 else
 	# Update .bashrc
-	echo "alias nvim={DIR}/nvim/nvim.appimage" >> $HOME/.bashrc
+	echo "alias nvim=${DIR}/nvim/nvim.appimage" >> $HOME/.bashrc
 fi
-
-nvim +PackerSync
 
