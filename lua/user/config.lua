@@ -67,7 +67,7 @@ vim.opt.termguicolors = true
 
 -- Set colorscheme
 vim.o.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
+pcall(vim.cmd, 'colorscheme gruvbox')
 
 -- Fix autocompletion menu
 vim.o.completeopt = 'menu,menuone,noselect'
