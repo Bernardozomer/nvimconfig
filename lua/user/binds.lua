@@ -52,7 +52,9 @@ keymap('i', '<M-h>', ':vertical resize -1<CR>', opts)
 keymap('i', '<M-l>', ':vertical resize +1<CR>', opts)
 
 -- Better terminal usage
-keymap('n', '<C-_>', ':split<CR> :resize 8<CR> :term<CR>', opts)
+keymap('n', '<C-_>', ':call TermToggle(8)<CR>', opts)
+keymap('t', '<C-_>', '<C-\\><C-n>:call TermToggle(8)<CR>', opts)
+keymap('t', '<esc>', '<C-\\><C-n>', opts)
 
 -- Better buffer navigation
 keymap('n', '<S-l>', ':bnext<CR>', opts)

@@ -21,6 +21,31 @@ vim.api.nvim_exec([[
 	false
 )
 
+-- Toggle terminal buffer
+-- Taken from https://stackoverflow.com/a/44273779/7834359
+vim.api.nvim_exec([[
+	let g:term_buf = 0
+	let g:term_win = 0
+
+	function! TermToggle(height)
+		if win_gotoid(g:term_win)
+			hide
+		else
+			botright new
+			exec "resize " . a:height
+			try
+				exec "buffer " . g:term_buf
+			catch
+				call termopen($SHELL, {"detach": 0})
+				let g:term_buf = bufnr("")
+			endtry
+			let g:term_win = win_getid()
+		endif
+	endfunction
+	]],
+	false
+)
+
 -- Make CursorHold events trigger faster
 vim.opt.updatetime = 300
 
