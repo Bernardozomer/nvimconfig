@@ -63,6 +63,9 @@ require('packer').startup(function(use)
 	-- Indent guides
 	use "lukas-reineke/indent-blankline.nvim"
 
+	-- Text surrounding tool
+	use 'machakann/vim-sandwich'
+
 	-- Completion
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-buffer'
