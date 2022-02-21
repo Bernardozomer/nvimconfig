@@ -22,23 +22,26 @@ vim.api.nvim_exec([[
 )
 
 -- Toggle terminal buffer
--- Taken from https://stackoverflow.com/a/44273779/7834359
+-- Inspired by https://stackoverflow.com/a/44273779/7834359
+--         and https://vi.stackexchange.com/a/24559.
 vim.api.nvim_exec([[
 	let g:term_buf = 0
 	let g:term_win = 0
 
-	function! TermToggle(height)
+	function! TermToggle(height) abort
 		if win_gotoid(g:term_win)
 			hide
 		else
-			botright new
-			exec "resize " . a:height
 			try
-				exec "buffer " . g:term_buf
+				execute 'botright sbuffer' . g:term_buf
 			catch
-				call termopen($SHELL, {"detach": 0})
-				let g:term_buf = bufnr("")
+				botright new
+				call termopen($SHELL, {'detach': 0})
+				let g:term_buf = bufnr('$')
 			endtry
+
+			exec 'resize ' . a:height
+			setlocal nobuflisted
 			let g:term_win = win_getid()
 		endif
 	endfunction
