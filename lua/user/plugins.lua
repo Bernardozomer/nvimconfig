@@ -169,7 +169,12 @@ require('indent_blankline').setup {
 }
 
 -- lualine
-require('lualine').setup()
+require('lualine').setup {
+	tabline = {
+		lualine_a = {'buffers'},
+		lualine_z = {'tabs'},
+	},
+}
 
 -- nvim-comment
 require('nvim_comment').setup()
