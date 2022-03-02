@@ -15,6 +15,6 @@ configs.setup {
 		disable = { '' },
 		additional_vim_regex_highlighting = true,
 	},
-	indent = { enable = true, disable = { '', 'lua' } },
+	indent = { enable = false, disable = { '', 'lua' } },
 }
 
