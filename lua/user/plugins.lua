@@ -63,6 +63,9 @@ require('packer').startup(function(use)
 	-- Indent guides
 	use "lukas-reineke/indent-blankline.nvim"
 
+	-- Colorizer
+	use "norcalli/nvim-colorizer.lua"
+
 	-- Text surrounding tool
 	use 'machakann/vim-sandwich'
 
@@ -147,14 +150,14 @@ alpha.section.header.val = {
 [[o888o o888o `Y8bod8P' `Y8bod8P'     `8'     o888o o888o o888o o888o]],
 }
 
-alpha.section.buttons.val = {
-	alpha.button("e", "  New file", ":ene <BAR>startinsert<CR>"),
-	alpha.button("f", "  Find files", ":Telescope find_files<CR>"),
-	alpha.button("o", "  Old files", ":Telescope oldfiles<CR>"),
-	alpha.button("g", "  Live grep", ":Telescope live_grep<CR>"),
-	alpha.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
-	alpha.button("q", "✖  Quit Neovim", ":qa<CR>"),
-}
+-- alpha.section.buttons.val = {
+-- 	alpha.button("e", "  New file", ":ene <BAR>startinsert<CR>"),
+-- 	alpha.button("f", "  Find files", ":Telescope find_files<CR>"),
+-- 	alpha.button("o", "  Old files", ":Telescope oldfiles<CR>"),
+-- 	alpha.button("g", "  Live grep", ":Telescope live_grep<CR>"),
+-- 	alpha.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
+-- 	alpha.button("q", "✖  Quit Neovim", ":qa<CR>"),
+-- }
 
 -- indent-blankline
 require('indent_blankline').setup {
@@ -199,4 +202,7 @@ require('nvim-autopairs').setup()
 require('gitsigns').setup({
 	current_line_blame = true
 })
+
+-- colorizer
+require('colorizer').setup()
 
