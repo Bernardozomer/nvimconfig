@@ -137,28 +137,6 @@ end)
 -- Configure plugins
 require('impatient')
 
--- alpha
-local alpha = require("alpha.themes.dashboard")
-
-alpha.section.header.val = {
-[[                                             o8o                   ]],
-[[                                             `"'                   ]],
-[[ooo. .oo.    .ooooo.   .ooooo.  oooo    ooo oooo  ooo. .oo.  .oo.  ]],
-[[`888P"Y88b  d88' `88b d88' `88b  `88.  .8'  `888  `888P"Y88bP"Y88b ]],
-[[ 888   888  888ooo888 888   888   `88..8'    888   888   888   888 ]],
-[[ 888   888  888    .o 888   888    `888'     888   888   888   888 ]],
-[[o888o o888o `Y8bod8P' `Y8bod8P'     `8'     o888o o888o o888o o888o]],
-}
-
--- alpha.section.buttons.val = {
--- 	alpha.button("e", "  New file", ":ene <BAR>startinsert<CR>"),
--- 	alpha.button("f", "  Find files", ":Telescope find_files<CR>"),
--- 	alpha.button("o", "  Old files", ":Telescope oldfiles<CR>"),
--- 	alpha.button("g", "  Live grep", ":Telescope live_grep<CR>"),
--- 	alpha.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
--- 	alpha.button("q", "✖  Quit Neovim", ":qa<CR>"),
--- }
-
 -- indent-blankline
 require('indent_blankline').setup {
 	filetype_exclude = {
