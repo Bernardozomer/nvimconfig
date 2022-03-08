@@ -87,7 +87,7 @@ require('packer').startup(function(use)
 	use 'williamboman/nvim-lsp-installer'
 
 	-- Comment toggler
-	use "terrortylor/nvim-comment"
+	use 'terrortylor/nvim-comment'
 
 	-- Treesitter
 	use {

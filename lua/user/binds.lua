@@ -13,9 +13,9 @@ local keymap = vim.api.nvim_set_keymap
 --   command_mode = "c",
 
 -- Yank to system clipboard
-keymap('n', '<leader>y', '"+y<CR>', opts)
-keymap('v', '<leader>y', '"+y<CR>', opts)
-keymap('x', '<leader>y', '"+y<CR>', opts)
+keymap('n', '<leader>y', '"+y', opts)
+keymap('v', '<leader>y', '"+y', opts)
+keymap('x', '<leader>y', '"+y', opts)
 
 -- Paste from system clipboard
 keymap('n', '<leader>p', '"+p', opts)
