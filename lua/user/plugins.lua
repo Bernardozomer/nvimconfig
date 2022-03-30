@@ -86,9 +86,6 @@ require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
 
-	-- Code formatter
-	use 'jose-elias-alvarez/null-ls.nvim'
-
 	-- Comment toggler
 	use 'terrortylor/nvim-comment'
 
@@ -160,32 +157,6 @@ require('lualine').setup {
 	},
 }
 
--- null-ls
-local null_ls = require('null-ls')
-local formatting = null_ls.builtins.formatting
-null_ls.setup {
-	sources = {
-		formatting.asmfmt,
-		formatting.black,
-		formatting.clang_format,
-		formatting.codespell,
-		formatting.fixjson,
-		formatting.prettier,
-		formatting.rustfmt,
-		formatting.stylua,
-	},
-	on_attach = function(client)
-		if client.resolved_capabilities.document_formatting then
-			vim.cmd([[
-				augroup LspFormatting
-					autocmd! * <buffer>
-					autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-				augroup END
-			]])
-		end
-	end,
-}
-
 -- nvim-comment
 require('nvim_comment').setup()
 
@@ -212,4 +183,3 @@ require('gitsigns').setup({
 
 -- colorizer
 require('colorizer').setup()
-
