@@ -52,14 +52,6 @@ require('packer').startup(function(use)
 	-- Startup time output breakdown
 	use 'tweekmonster/startuptime.vim'
 
-	-- Custom start page
-	use {
-		'goolord/alpha-nvim',
-		config = function ()
-			require'alpha'.setup(require'alpha.themes.dashboard'.config)
-		end
-	}
-
 	-- Indent guides
 	use "lukas-reineke/indent-blankline.nvim"
 
@@ -144,7 +136,6 @@ require('indent_blankline').setup {
 		'packer',
 		'checkhealth',
 		'help',
-		'alpha',
 		'',
 	},
 }

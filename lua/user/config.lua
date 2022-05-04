@@ -11,44 +11,6 @@ vim.api.nvim_exec([[
 	false
 )
 
--- Stay in insert mode inside the terminal and remove line numbers
-vim.api.nvim_exec([[
-		augroup terminal
-			autocmd TermOpen * :startinsert
-			autocmd TermOpen * :setlocal nonumber norelativenumber
-			autocmd BufWinEnter,WinEnter term://* startinsert
-	]],
-	false
-)
-
--- Toggle terminal buffer
--- Inspired by https://stackoverflow.com/a/44273779/7834359
---         and https://vi.stackexchange.com/a/24559.
-vim.api.nvim_exec([[
-	let g:term_buf = 0
-	let g:term_win = 0
-
-	function! TermToggle(height) abort
-		if win_gotoid(g:term_win)
-			hide
-		else
-			try
-				execute 'botright sbuffer' . g:term_buf
-			catch
-				botright new
-				call termopen($SHELL, {'detach': 0})
-				let g:term_buf = bufnr('$')
-			endtry
-
-			exec 'resize ' . a:height
-			setlocal nobuflisted
-			let g:term_win = win_getid()
-		endif
-	endfunction
-	]],
-	false
-)
-
 -- Make CursorHold events trigger faster
 vim.opt.updatetime = 300
 

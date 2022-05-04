@@ -1,4 +1,3 @@
-require('user.alpha')
 require('user.binds')
 require('user.cmp')
 require('user.config')
