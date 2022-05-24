@@ -64,22 +64,20 @@ telescope.setup {
 		keymaps = {
 			theme = 'ivy',
 		},
-		lsp_code_actions = {
-			theme = 'cursor',
-		},
-		lsp_range_code_actions = {
-			theme = 'cursor',
-		},
 		registers = {
 			theme = 'cursor',
 		},
 	},
 	extensions = {
-		-- Your extension configuration goes here:
-		-- extension_name = {
-		--   extension_config_key = value,
-		-- }
-		-- please take a look at the readme of the extension you want to configure
+		['file-browser'] = {},
+		['fzf'] = {},
+		['telescope-emoji'] = {
+			action = function(emoji)
+				vim.fn.setreg("e", emoji.value)
+				print([[Press "ep to paste this emoji]] .. emoji.value)
+			end,
+		},
+		['ui-select'] = {},
 	},
 }
 

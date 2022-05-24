@@ -50,7 +50,6 @@ keymap('n', '<leader>cm', '<cmd>lua require(\'telescope.builtin\').commands()<CR
 keymap('n', '<leader>k', '<cmd>lua require(\'telescope.builtin\').keymaps()<CR>', opts)
 keymap('n', '<leader>h', '<cmd>lua require(\'telescope.builtin\').help_tags()<CR>', opts)
 
-keymap('n', '<leader>ca', '<cmd>lua require(\'telescope.builtin\').lsp_code_actions()<CR>', opts)
 keymap('n', 'gr', '<cmd>lua require(\'telescope.builtin\').lsp_references()<CR>', opts)
 keymap('n', '<leader>d', '<cmd>lua require(\'telescope.builtin\').diagnostics()<CR>', opts)
 

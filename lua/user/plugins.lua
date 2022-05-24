@@ -102,6 +102,8 @@ require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+	use 'nvim-telescope/telescope-ui-select.nvim'
+
 	-- File browser for telescope
 	use 'nvim-telescope/telescope-file-browser.nvim'
 
@@ -150,19 +152,6 @@ require('lualine').setup {
 
 -- nvim-comment
 require('nvim_comment').setup()
-
--- telescope
-local telescope = require('telescope')
-telescope.load_extension('fzf')
-telescope.load_extension('file_browser')
-telescope.load_extension('emoji')
-
-require("telescope-emoji").setup({
-	action = function(emoji)
-		vim.fn.setreg("e", emoji.value)
-		print([[Press "ep to paste this emoji]] .. emoji.value)
-	end,
-})
 
 -- nvim-autopairs
 require('nvim-autopairs').setup()
