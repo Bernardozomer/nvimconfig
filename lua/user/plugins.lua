@@ -77,6 +77,7 @@ require('packer').startup(function(use)
 	-- Built-in LSP
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
+	use 'j-hui/fidget.nvim'
 
 	-- Comment toggler
 	use 'terrortylor/nvim-comment'
@@ -113,9 +114,6 @@ require('packer').startup(function(use)
 		run = 'make'
 	}
 
-	-- Emoji picker for telescope
-	use 'xiyaowong/telescope-emoji.nvim'
-
 	-- Autopairs
 	use 'windwp/nvim-autopairs'
 
@@ -140,6 +138,13 @@ require('indent_blankline').setup {
 		'help',
 		'',
 	},
+}
+
+-- fidget
+require('fidget').setup {
+	text = {
+		spinner = "arc"
+	}
 }
 
 -- lualine
