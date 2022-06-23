@@ -124,6 +124,9 @@ require('packer').startup(function(use)
 			'nvim-lua/plenary.nvim'
 		}
 	}
+
+	-- Visual preview for :line_number
+	use 'nacro90/numb.nvim'
 end)
 
 -- Configure plugins
@@ -168,3 +171,5 @@ require('gitsigns').setup({
 
 -- colorizer
 require('colorizer').setup()
+
+require('numb').setup()
