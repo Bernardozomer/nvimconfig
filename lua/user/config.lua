@@ -63,8 +63,16 @@ pcall(vim.cmd, 'colorscheme gruvbox')
 vim.o.completeopt = 'menu,menuone,noselect'
 
 -- Delete trailing whitespace on save
+StripTrailingWhitespaces = function ()
+	local l = vim.fn.line('.')
+	local c = vim.fn.col('.')
+	vim.cmd("%s/\\s\\+$//e")
+	-- Preserve cursor position
+	vim.cmd(":call cursor(" .. l .. ", " .. c .. ")")
+end
+
 vim.api.nvim_exec(
-	[[autocmd BufWritePre * %s/\s\+$//e]],
+	[[autocmd BufWritePre * :lua StripTrailingWhitespaces()]],
 	false
 )
 
